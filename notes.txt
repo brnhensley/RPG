@@ -1,0 +1,2 @@
+run $npm init then $npm install
+$ ./node_modules/.bin/jasmine init
