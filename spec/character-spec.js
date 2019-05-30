@@ -1,4 +1,5 @@
 import { Character } from './../src/character.js';
+import { Battle } from './../src/battle.js';
 
 describe('Character', function() {
   it('Should create a default Character', function() {
@@ -101,41 +102,5 @@ describe('Character', function() {
     pauly.kills(herbert);
     expect(pauly.level).toEqual(9);
     expect(pauly.exp).toEqual(400);
-  });
-});
-
-describe('Character', function() {
-  it("will battle pauly will die", function() {
-    let pauly = new Character({
-      level: 1
-    });
-    let herbert = new Character({
-      value: 100,
-      level: 40,
-      strength: 10,
-      defence: 10
-    });
-    console.log(herbert);
-    pauly.battle(herbert);
-    console.log(herbert);
-    expect(pauly.health).toEqual(0);
-  });
-});
-
-describe('Character', function() {
-  it("will battle herbert will die", function() {
-    let pauly = new Character({
-      level: 1,
-      exp: 500000
-    });
-    pauly.levelUp(pauly)
-    let herbert = new Character({
-      value: 100,
-      level: 40,
-      strength: 10,
-      defence: 10
-    });
-    pauly.battle(herbert);
-    expect(herbert.health).toEqual(0);
   });
 });

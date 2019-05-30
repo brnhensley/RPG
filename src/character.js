@@ -30,58 +30,13 @@ export class Character
     }
   }
 
-  // enemyLevelUp(enemy)
-  // {
-  //   while(enemy.exp >= (100 * enemy.level))
-  //   {
-  //     enemy.exp -= (100 * enemy.level);
-  //     enemy.level += 1;
-  //     enemy.strength += parseInt((enemy.level/4) + 1);
-  //     enemy.magic += parseInt((enemy.level/4) + 1);
-  //     enemy.defence += parseInt((enemy.level/4) + 1);
-  //   }
-  // }
-
   kills(enemy)
   {
     this.exp += (enemy.value * enemy.level);
     this.levelUp(enemy);
     return this.exp;
   }
-  // enemyKills(enemy)
-  // {
-  //   enemy.exp += (this.value * this.level);
-  //   enemy.enemyLevelUp(enemy);
-  //   return enemy.exp;
-  // }
 
-  battle(enemy)
-  {
-    while (this.health > 0 && enemy.health > 0)
-    {
-      if (this.strength > enemy.defence)
-      {
-        enemy.health -= this.strength;
-
-        if (enemy.health < 0) enemy.health = 0;
-        if (enemy.health === 0)
-        {
-          this.kills(enemy);
-          return this.name + " wins! " + enemy.name + " is DEAD!";
-        }
-      }
-      if (enemy.strength > this.defence)
-      {
-        this.health -= enemy.strength;
-        if (this.health < 0) this.health = 0;
-        if(this.health === 0)
-        {
-          // enemy.kills(enemy)
-          return this.name + " are a fucking loser!";
-        }
-      }
-    }
-  }
 
 }
 
@@ -92,7 +47,7 @@ let pauly = new Character({
   magic: 5,
   intelligence: 5,
   value: 200,
-  inventory: ['poop ingot', 'poop hammer', 'porcelain anvil' ]
+  inventory: ['poop ingot', 'poop hammer', 'porcelain anvil']
 });
 
 let swampthang = new Character({
