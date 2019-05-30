@@ -30,9 +30,10 @@ describe('Character', function() {
 
 describe('Character', function() {
   it("Should add 1 to character's level", function() {
-    let defaultCharacter = new Character();
-    defaultCharacter.exp = 100;
-    defaultCharacter.levelUp();
+    let defaultCharacter = new Character({
+      exp: 100
+    });
+    defaultCharacter.levelUp(defaultCharacter);
     expect(defaultCharacter.level).toEqual(2);
     expect(defaultCharacter.strength).toEqual(1);
     expect(defaultCharacter.magic).toEqual(1);
@@ -74,9 +75,6 @@ describe('Character', function() {
 describe('Character', function() {
   it("pauly should gain experience based on level and reset exp", function() {
     let pauly = new Character({
-      strength: 2,
-      magic: 3,
-      defence: 4,
       exp: 1,
       level: 40
     });
@@ -87,5 +85,20 @@ describe('Character', function() {
     pauly.kills(herbert);
     expect(pauly.level).toEqual(41);
     expect(pauly.exp).toEqual(1);
+  });
+});
+
+describe('Character', function() {
+  it("have a level 1 character kill a level 40 character", function() {
+    let pauly = new Character({
+      level: 1
+    });
+    let herbert = new Character({
+      value: 100,
+      level: 40
+    });
+    pauly.kills(herbert);
+    expect(pauly.level).toEqual(9);
+    expect(pauly.exp).toEqual(400);
   });
 });

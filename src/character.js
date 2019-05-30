@@ -19,13 +19,11 @@ export class Character
   }
 
 
-  levelUp()
+  levelUp(enemy)
   {
-    if (this.exp >= (100 * this.level))
+    while(this.exp >= (100 * this.level))
     {
-      console.log(this.exp);
       this.exp -= (100 * this.level);
-      console.log(this.exp);
       this.level += 1;
       this.strength += parseInt((this.level/4) + 1);
       this.magic += parseInt((this.level/4) + 1);
@@ -36,7 +34,7 @@ export class Character
   kills(enemy)
   {
     this.exp += (enemy.value * enemy.level);
-    this.levelUp();
+    this.levelUp(enemy);
     return this.exp;
   }
 
