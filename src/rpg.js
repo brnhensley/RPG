@@ -1,3 +1,3 @@
-export class Rpg {
-  constructor()
-}
+// export class Rpg {
+//   constructor()
+// }

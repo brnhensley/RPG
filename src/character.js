@@ -36,15 +36,23 @@ export class Character
     {
       this.exp += 1;
     }
+    if(enemy === pauly)
+    {
+      this.exp += 200;
+    }
+    if(enemy === swampthang)
+    {
+      this.exp += 200;
+    }
     if(enemy === Herbert)
     {
       this.exp += 100;
     }
     if(this.exp >= 100)
     {
-      this.levelUp()
+      this.levelUp();
     }
-    return exp;
+    return this.exp;
   }
 
 
@@ -57,7 +65,7 @@ let pauly = new Character({
   magic: 5,
   intelligence: 5,
   inventory: ['poop ingot', 'poop hammer', 'porcelain anvil' ]
-})
+});
 
 let swampthang = new Character({
   name: "Swampthang",
@@ -66,7 +74,7 @@ let swampthang = new Character({
   magic: 40,
   intelligence: 10,
   inventory: ['bong', 'grinder']
-})
+});
 
 let criminal = new Character ({
   name: "Criminal",
@@ -75,20 +83,20 @@ let criminal = new Character ({
   magic: 10,
   defense: 5,
   intelligence: 1,
-  inventory ['potion', 'creepy pictures', 'chains']
-})
+  inventory: ['potion', 'creepy pictures', 'chains']
+});
 
 let buttholeSpider = new Character ({
   // spawn in groups of 10
   // they have no defense against buttplugs
-  name: 'Butthole Spider'
-  occupation: 'critter of the night'
+  name: 'Butthole Spider',
+  occupation: 'critter of the night',
   strength: 2,
   health: 10,
   dex: 40,
   magicResistance: 50,
   inventory: ['lockpick']
-})
+});
 
 let Herbert = new Character ({
   name: 'Herbert The Pervert',
@@ -99,4 +107,4 @@ let Herbert = new Character ({
   defense: 50,
   magicResistance: 50,
   dex: 10,
-})
+});
