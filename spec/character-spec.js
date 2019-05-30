@@ -64,10 +64,28 @@ describe('Character', function() {
       value: 4000
     });
     pauly.kills(herbert);
-    console.log(pauly);
     expect(pauly.level).toEqual(41);
     expect(pauly.strength).toEqual(13);
     expect(pauly.magic).toEqual(14);
     expect(pauly.defence).toEqual(15);
+  });
+});
+
+describe('Character', function() {
+  it("pauly should gain experience based on level and reset exp", function() {
+    let pauly = new Character({
+      strength: 2,
+      magic: 3,
+      defence: 4,
+      exp: 1,
+      level: 40
+    });
+    let herbert = new Character({
+      value: 100,
+      level: 40
+    });
+    pauly.kills(herbert);
+    expect(pauly.level).toEqual(41);
+    expect(pauly.exp).toEqual(1);
   });
 });

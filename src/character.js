@@ -23,11 +23,13 @@ export class Character
   {
     if (this.exp >= (100 * this.level))
     {
+      console.log(this.exp);
+      this.exp -= (100 * this.level);
+      console.log(this.exp);
       this.level += 1;
       this.strength += parseInt((this.level/4) + 1);
       this.magic += parseInt((this.level/4) + 1);
       this.defence += parseInt((this.level/4) + 1);
-      this.exp = 0;
     }
   }
 
